@@ -1,0 +1,12 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "Running pre-push checks..."
+npm run typecheck && npm run lint && npm run test:tools
+
+if [ $? -ne 0 ]; then
+  echo "Pre-push checks failed. Push aborted."
+  exit 1
+fi
+
+echo "All pre-push checks passed."
