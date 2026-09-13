@@ -67,7 +67,7 @@ export default function CasePage() {
     try {
       let caseId: string;
       let customerMessage: string;
-      let casePayload: any;
+      let casePayload: { case_id: string; customer_message: string; customer_id?: string; order_id?: string };
 
       if (mode === "demo" && selectedScenario) {
         const scenario = DEMO_SCENARIOS.find(s => s.id === selectedScenario);

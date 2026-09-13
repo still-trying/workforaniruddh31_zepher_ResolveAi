@@ -1,14 +1,10 @@
-import {
-  checkSupabaseConnection,
-  isEnvConfigured,
-  type EnvVarName,
-} from "@/lib/supabase/client";
+import { checkSupabaseConnection } from "@/lib/supabase/client";
 
 export const dynamic = "force-dynamic";
 
 
 export default async function Home() {
-  const connection = await checkSupabaseConnection();
+  await checkSupabaseConnection();
 
   return (
     <main className="mx-auto w-full max-w-3xl flex-1 px-8 py-16 font-sans bg-white/60 dark:bg-zinc-950/60 backdrop-blur-md rounded-2xl border border-white/20 dark:border-zinc-800/50 shadow-xl mt-12 mb-12">
